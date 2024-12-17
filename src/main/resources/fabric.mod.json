@@ -1,0 +1,34 @@
+{
+	"schemaVersion": 1,
+	"id": "warden-tweaks",
+	"version": "${version}",
+	"name": "Warden Tweaks",
+	"description": "Adjust warden cooldown time.",
+	"authors": [
+		"Kim-Lan"
+	],
+	"contact": {
+		"homepage": "https://github.com/Kim-Lan",
+		"sources": "https://github.com/Kim-Lan/warden-tweaks"
+	},
+	"license": "MIT",
+	"icon": "assets/warden-tweaks/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.kimlan.wardentweaks.WardenTweaks"
+		]
+	},
+	"mixins": [
+		"warden-tweaks.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.9",
+		"minecraft": "~1.21.4",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
