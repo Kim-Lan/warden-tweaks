@@ -3,7 +3,10 @@
 	"package": "com.kimlan.wardentweaks.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"SculkShriekerWarningManagerMixin"
+		"SculkShriekerBlockEntityMixin",
+		"SculkShriekerBlockMixin",
+		"SculkShriekerWarningManagerMixin",
+		"WardenEntityMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
