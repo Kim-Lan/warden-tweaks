@@ -3,7 +3,7 @@
 	"id": "warden-tweaks",
 	"version": "${version}",
 	"name": "Warden Tweaks",
-	"description": "Adjust warden cooldown time.",
+	"description": "Adjust warden mechanics.",
 	"authors": [
 		"Kim-Lan"
 	],
