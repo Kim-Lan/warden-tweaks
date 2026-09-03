@@ -11,7 +11,7 @@
 		"homepage": "https://github.com/Kim-Lan",
 		"sources": "https://github.com/Kim-Lan/warden-tweaks"
 	},
-	"license": "MIT",
+	"license": "ARR",
 	"icon": "assets/warden-tweaks/icon.png",
 	"environment": "*",
 	"entrypoints": {
@@ -27,8 +27,5 @@
 		"minecraft": "~1.21.4",
 		"java": ">=21",
 		"fabric-api": "*"
-	},
-	"suggests": {
-		"another-mod": "*"
 	}
 }
