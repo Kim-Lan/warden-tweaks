@@ -14,7 +14,7 @@ public class WardenTweaksConfigModel {
     @RangeConstraint(min = 1, max = Integer.MAX_VALUE)
     public int maxWarningLevel = 4;
 
-    public boolean allShriekersCanSpawn = false;
+    public boolean placedShriekersCanSpawnWarden = false;
 
     @RangeConstraint(min = 1.0, max = Double.MAX_VALUE)
     public double wardenMaxHealth = 500.0;
