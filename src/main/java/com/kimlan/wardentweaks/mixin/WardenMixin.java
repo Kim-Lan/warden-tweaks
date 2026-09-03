@@ -10,17 +10,17 @@ import org.spongepowered.asm.mixin.injection.ModifyConstant;
 @Mixin(Warden.class)
 abstract class WardenMixin {
     @ModifyConstant(method = "createAttributes", constant = @Constant(doubleValue = 500.0))
-    private static double configuredWardenMaxHealth(double value) {
+    private static double injectedWardenMaxHealth(double value) {
         return CONFIG.wardenMaxHealth();
     }
 
     @ModifyConstant(method = "<init>", constant = @Constant(intValue = 5))
-    private int configuredWardenExperiencePoints(int value) {
+    private int injectedWardenExperiencePoints(int value) {
         return CONFIG.wardenExperiencePoints();
     }
 
     @ModifyConstant(method = "createAttributes", constant = @Constant(doubleValue = 30.0))
-    private static double configuredWardenMeleeAttackDamage(double value) {
+    private static double injectedWardenMeleeAttackDamage(double value) {
         return CONFIG.wardenMeleeAttackDamage();
     }
 }

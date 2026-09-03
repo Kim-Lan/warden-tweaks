@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.*;
 @Mixin(SculkShriekerBlock.class)
 abstract class SculkShriekerBlockMixin {
 	@ModifyConstant(method = "<init>", constant = @Constant(intValue = 0, ordinal = 2))
-	private int configuredCanSummon(int value) {
+	private int injectedCanSummon(int value) {
 		return CONFIG.placedShriekersCanSpawnWarden() ? 1 : 0;
 	}
 }
@@ -25,12 +25,12 @@ abstract class SculkShriekerBlockEntityMixin {
 	private int warningLevel;
 
 	@ModifyConstant(method = "trySummonWarden", constant = @Constant(intValue = 4))
-	private int configuredSpawnWardenWarningLevel(int value) {
+	private int injectedSpawnWardenWarningLevel(int value) {
 		return CONFIG.spawnWardenWarningLevel();
 	}
 
 	@ModifyVariable(method = "playWardenReplySound", at = @At("STORE"), ordinal = 0)
-	private SoundEvent modifiedWardenReplySound(SoundEvent soundEvent) {
+	private SoundEvent injectedWardenReplySound(SoundEvent soundEvent) {
 		int warningLevelDifference = CONFIG.spawnWardenWarningLevel() - this.warningLevel;
         if (warningLevelDifference <= 0) {
 			return SoundEvents.WARDEN_LISTENING_ANGRY;
@@ -46,12 +46,12 @@ abstract class SculkShriekerBlockEntityMixin {
 @Mixin(WardenSpawnTracker.class)
 abstract class WardenSpawnTrackerMixin {
 	@ModifyConstant(method = "tick()V", constant = @Constant(intValue = 12000))
-	private int configuredWarnDecreaseCooldown(int value) {
+	private int injectedWarnDecreaseCooldown(int value) {
 		return CONFIG.warnDecreaseCooldown();
 	}
 
 	@ModifyConstant(method = "setWarningLevel(I)V", constant = @Constant(intValue = 4))
-	private int configuredMaxWarningLevel(int value) {
+	private int injectedMaxWarningLevel(int value) {
 		return CONFIG.maxWarningLevel();
 	}
 }
